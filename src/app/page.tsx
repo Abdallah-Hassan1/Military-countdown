@@ -8,7 +8,7 @@ export default function Home() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [finished, setFinished] = useState(false); // after the time is over, change the default value to "true"
-  const date = "Jun 1, 2025";
+  const date = "Jun 1, 2026";
   const endDate = new Date(date).getTime();
 
   // Update the count down every 1 second
@@ -38,17 +38,23 @@ export default function Home() {
   if (finished)
     pageStyle =
       "h-screen flex flex-col bg-[url('/ministry.png')] bg-no-repeat bg-cover";
-      
+
   return (
     <div className={pageStyle}>
       <div className="text-center text-white text-4xl font-semibold p-8 font-serif mt-10">
         Ministry of Interior
-        <div className="mt-20 -mb-50">
+        <div className="mt-5 font-bold">
+          <span className="text-red-700">Red</span>{" "}
+          <span className="text-blue-700">Sea</span>{" "}
+          <span className="text-gray-300">Security Forces</span>
+        </div>
+        <div className="mt-10 -mb-50">
           End date: <span className=" text-red-500">{date}</span>
         </div>
       </div>
+
       {finished && (
-        <div className="text-center text-white text-4xl font-semibold p-8 font-serif mt-30 -mb-50">
+        <div className="text-center text-white text-4xl font-semibold p-8 font-serif mt-40 -mb-60">
           It &apos; s over since
         </div>
       )}
